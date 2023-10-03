@@ -1,7 +1,7 @@
 # Tecnologías
 
 - React
-- Backend
+- PHP
 
 Poryecto colaborativo sobre una pagina de resturante
 
