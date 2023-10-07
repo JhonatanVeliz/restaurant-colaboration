@@ -16,13 +16,13 @@
          * 
          * @return string a JSON-encoded string representation of the "platos" data.
          */
-        public function index(): string
+        public function index(): void
         {                                      
             $query = new Query();
 
             $platos = $query->selectAll("platos", $this->dbcon);
 
-            return json_encode($platos);            
+            echo json_encode($platos);            
         }
     }    
 ?>  
