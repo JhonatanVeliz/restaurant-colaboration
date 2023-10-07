@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+###> backend files to ignore ###
+Application/log/
+Application/db_vol/
+Application/MariaDB/
+000-default.conf
+default-ssl.conf
+docker-compose.yaml
+Dockerfile
+###< my files to ignore ###
