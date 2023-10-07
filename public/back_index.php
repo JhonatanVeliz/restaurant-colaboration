@@ -7,8 +7,7 @@
 	use model\classes\Loader;		
 
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/../Application/aplication_fns.php");
-
-	//model\classes\Loader::init($_SERVER['DOCUMENT_ROOT'] . "/../Application");
+	
 	$loader = new Loader();
 	$loader->init($_SERVER['DOCUMENT_ROOT'] . "/../Application");
 	
@@ -17,7 +16,8 @@
 	$indexController = new IndexController($dbcon);
 	
 	match($action) {
-		"index"	=>	$indexController->index(),
-		default	=>	$indexController->index(),
+		"index"		=>	$indexController->index(),
+		"create" 	=> 	$indexController->create(),
+		default		=>	$indexController->index(),
 	}	
 ?>

@@ -2,6 +2,7 @@
     namespace Controller;
 
     use model\classes\Query;
+    use model\classes\Validate;
 
     class IndexController
     {
@@ -23,6 +24,30 @@
             $platos = $query->selectAll("platos", $this->dbcon);
 
             echo json_encode($platos);            
+        }
+
+        /**
+         * Inserts the values into 'platos' table, and echoes a message indicating that the data has
+         * been saved.
+         */
+        function create() : void 
+        {            
+            // Create an object to validate inputs
+            $validate = new Validate();            
+
+            // Get values from form
+            $fields = [
+                "name"          => $validate->test_input($_POST['name']),
+                "description"   => $validate->test_input($_REQUEST['description']),
+                "price"         => $validate->test_input($_REQUEST['price']),
+            ];
+            
+            $query = new Query();
+
+            // Save values
+            $query->insertInto('platos', $fields, $this->dbcon);
+
+            echo "Saved successfully";           
         }
     }    
 ?>  
