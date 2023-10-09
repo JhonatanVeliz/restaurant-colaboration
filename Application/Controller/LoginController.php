@@ -2,7 +2,6 @@
     namespace Controller;
 
     use PDO;
-	use Controller\IndexController;
     use model\classes\Validate;
 
     /**
@@ -75,7 +74,7 @@
 				}									
 			}
 			else {		
-				//header("Location: /");
+				echo json_encode([]);
 			}									
         }
 
