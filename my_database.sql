@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: db
--- Tiempo de generación: 07-10-2023 a las 06:20:27
+-- Tiempo de generación: 09-10-2023 a las 18:25:36
 -- Versión del servidor: 10.11.2-MariaDB-1:10.11.2+maria~ubu2204
 -- Versión de PHP: 8.0.27
 
@@ -39,8 +39,30 @@ CREATE TABLE `platos` (
 --
 
 INSERT INTO `platos` (`id`, `name`, `description`, `price`) VALUES
-(1, 'Breakkie Roll', NULL, '25.00'),
-(2, 'Sumo de Frutas', NULL, '10.00');
+(1, 'Breakkie Roll', '', '25.00'),
+(2, 'Sumo de Frutas', '', '10.00'),
+(3, 'Huevos Ranchero', '', '25.00'),
+(4, 'Smashed Avo', '', '25.00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `password`, `email`) VALUES
+(1, 'admin', '$2y$10$X1yI6ChuiFqp3SSaz/z1PO9hDArzxI18DwgUOkQ2BD55QGj5x8wK2', 'admin@admin.com');
 
 --
 -- Índices para tablas volcadas
@@ -53,6 +75,12 @@ ALTER TABLE `platos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -60,7 +88,13 @@ ALTER TABLE `platos`
 -- AUTO_INCREMENT de la tabla `platos`
 --
 ALTER TABLE `platos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
